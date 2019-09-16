@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TemplateComponent } from './components/template/template.component';
 import { DataComponent } from './components/data/data.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { environment } from '../environments/environment';
 
 //Forms
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // Firebase
 
 import { AngularFireModule } from '@angular/fire';
@@ -25,7 +24,6 @@ import { ContactComponent } from './components/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateComponent,
     DataComponent,
     NavbarComponent,
     ContactComponent
@@ -33,6 +31,7 @@ import { ContactComponent } from './components/contact/contact.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
