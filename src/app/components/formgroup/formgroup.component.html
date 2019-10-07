@@ -1,0 +1,50 @@
+<div class="container">
+  <br><br>
+  <h4>FormGroup and Validators</h4>
+  <hr>
+</div>
+
+<div class="container">
+  <form [formGroup]="registroDatosUsuario" (ngSubmit)="save()">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+        <input formControlName="nombre" class="form-control" type="text" placeholder="Nombre">
+        <div *ngIf="!registroDatosUsuario.controls['nombre'].valid && registroDatosUsuario.controls['nombre'].touched" class="form-control-feedback">
+          Ingrese el nombre
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+        <input formControlName="apellido" class="form-control" type="text" placeholder="Apellido">
+        <div *ngIf="!registroDatosUsuario.controls['apellido'].valid && registroDatosUsuario.controls['apellido'].touched" class="form-control-feedback">
+          Ingrese el apellido
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Correo</label>
+      <div class="col-md-8">
+        <input formControlName="email" class="form-control" type="email" placeholder="Correo electrónico">
+         <div *ngIf="registroDatosUsuario.controls['email'].errors?.pattern" class="form-control-feedback">
+           Ingrese un email válido
+         </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">&nbsp;</label>
+      <div class="input-group col-md-8">
+        <button type="submit" class="btn btn-outline-primary"> Guardar </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+

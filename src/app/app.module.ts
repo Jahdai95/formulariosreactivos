@@ -19,6 +19,7 @@ import { from } from 'rxjs';
 
 import { DataDbService } from './services/data-db.service';
 import { ContactComponent } from './components/contact/contact.component';
+import { FormgroupComponent } from './components/formgroup/formgroup.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ContactComponent } from './components/contact/contact.component';
     AppComponent,
     DataComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    FormgroupComponent
   ],
   imports: [
     BrowserModule,
